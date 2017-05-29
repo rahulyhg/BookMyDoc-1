@@ -1,0 +1,55 @@
+<html>
+	<head>
+		<title>Selection</title>
+		<link rel="stylesheet" href="design.css">
+		<h1>Book My Doctor</h1>
+			<script>
+				function validate()
+				{
+					var l=document.form.local.value;
+					var s=document.form.special.value;
+					if(l=="Default")
+					{
+						alert("Please select locality");
+						document.form.local.focus();
+						return false;
+					}
+					if(s=="Default")
+					{
+						alert("Please select speciality");
+						document.form.special.focus();
+						return false;
+					}
+					return true;
+				}
+				
+				
+		    </script>
+	</head>
+		<body>
+		<ul class="w3-navbar w3-black">
+			  <li><a href="logout.php">Logout</a></li>
+			  <li><a href="aboutus.html">About</a></li>
+			  <li><a href="Register.html">Register</a></li>
+			  <li><a href="main.html">Home</a></li>
+		</ul><br><br><br><br>
+		<center>
+		<form name="form" onsubmit="return validate()" method="post" action="doctors.php">
+			<font size="4"> Locality:</font>
+			<select name="locl" >
+			<option selected="" value="Default">Choose Locality</option>
+			<option value="Bandra">Bandra</option>
+			<option value = "Malad">Malad</option>
+			</select>&nbsp&nbsp&nbsp&nbsp&nbsp
+			<font size="4">Speciality:</font>
+			<select name="special" >
+			<option selected="" value="Default">Choose Speciality</option>
+			<option value="Cardiologist">Cardiologist</option>
+			<option value="Dermatologist">Dermatologist</option>
+			</select>
+			<br><br>
+			<input type="submit" value="submit">
+		</form>
+		</center>
+	</body>
+</html>

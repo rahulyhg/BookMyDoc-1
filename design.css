@@ -1,0 +1,34 @@
+body {
+    background-image: url("doctor1.png"), url("bookappt.png"), url("bg6.jpg");
+    background-repeat: no-repeat;
+    background-size: 320px 260px, 380px 250px, 100% 100%;
+    background-position: left center, right center;
+    background-attachment: fixed;
+}
+h1 {
+    color: brown;
+    text-align: center;
+    font-size: 40px;
+}
+
+p {
+    color: red;
+}
+ul {
+    list-style-type: none;
+    overflow: hidden;
+    background-color: black;
+}
+
+li {
+    float: right;
+}
+li a:hover {
+    background-color: green;
+}
+li a {
+    color: white;
+    display: block;
+    padding: 16px;
+    text-decoration: none;
+}

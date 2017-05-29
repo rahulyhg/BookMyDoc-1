@@ -1,0 +1,45 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="design.css">
+    <h1>Book My Doctor</h1>
+    <script>
+			function validateform1()
+			{
+				var f=document.form.num.value;
+				var f1=/^[0-9]+$/;
+				if(!f1.test(f))
+				{
+					alert("Please enter only numbers");
+					document.form.num.focus();
+					return false;
+				}
+				if(f.length != 10)
+				{
+					alert("Enter 10 digit number");
+					document.form.num.focus();
+					return false;
+				}
+				return true;
+			}
+    </script>
+  </head>
+  <body>
+    <ul class="w3-navbar w3-black">
+	 <li><a href="logout.php">Logout</a></li>
+      <li><a href="aboutus.html">About</a></li>
+      <li><a href="Register.html">Register</a></li>
+      <li><a href="main.html">Home</a></li>
+    </ul>
+    <br>
+    <h1>Register here</h1>
+  <form name="form" onsubmit="return validateform()" method="POST" action="db.php">
+  <center>
+  <input type = "text" placeholder = "First name" name = "fn" required><br><br>
+  <input type = "text" placeholder = "Last name" name = "ln" required><br><br>
+  <input type = "email" placeholder = "Email-ID" name = "eid" required><br><br>
+  <input type = "password" placeholder = "Password" name = "pwd" required><br><br>
+  <input type = "text" placeholder = "Mobile no." name = "num" required><br><br>
+  <input type = "submit" value = "Confirm" <br><br>
+  </center>
+  </form>
+</body></html>

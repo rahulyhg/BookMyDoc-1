@@ -1,0 +1,199 @@
+  <?php
+session_start();
+?>
+<html>
+<head>
+
+    <link rel="stylesheet" href="design.css">
+    <h1>Book My Doctor</h1>
+
+			<script>
+				function validate()
+				{
+					var l=document.booking.local.value;
+					var s=document.booking.special.value;
+					if(l=="Default")
+					{
+						alert("Please select locality");
+						document.booking.local.focus();
+						return false;
+					}
+					if(s=="Default")
+					{
+						alert("Please select speciality");
+						document.booking.special.focus();
+						return false;
+					}
+					
+					var p=document.booking.sub.value;
+					if(p=="Default")
+					{
+						alert("Please select doctor");
+						document.booking.sub.focus();
+						return false;
+					}
+					
+					
+					var w=document.booking.firstname.value;
+					 if(w==""||w==null)
+                    {
+                   alert("please enter name");
+                   document.booking.firstname.focus();
+                    return false;
+                    }
+					
+					var m=document.booking.lastname.value;
+					 if(m==""||m==null)
+                    {
+                   alert("please enter name");
+                   document.booking.lastname.focus();
+                    return false;
+                    }
+					
+					return true;
+				}
+				
+				
+				function subject()
+			{
+				var n=document.booking.local.value;
+				var k=document.booking.special.value;
+				if(n=="b" && k=="c" )
+				{
+					var x=document.getElementById("g");
+					removeOptions(x);
+					var opt=document.createElement("option");
+					opt.text="Karan Thakur";
+					x.add(opt);
+					var opt=document.createElement("option");
+					opt.text="Shreya Kumar";
+					x.add(opt);
+					var opt=document.createElement("option");
+					opt.text="Vinny Miranda";
+					x.add(opt);
+				}
+				if(n=="m" && k=="c" )
+				{
+					var x=document.getElementById("g");
+					removeOptions(x);
+					var opt=document.createElement("option");
+					opt.text="Archana Singh";
+					x.add(opt);
+					var opt=document.createElement("option");
+					opt.text="Dinesh Israni";
+					x.add(opt);
+					var opt=document.createElement("option");
+					opt.text="Raj Tiwari";
+					x.add(opt);
+				} 
+					if(n=="b" && k=="d" )
+				{
+					var x=document.getElementById("g");
+					removeOptions(x);
+					var opt=document.createElement("option");
+					opt.text="Bhavesh Pal";
+					x.add(opt);
+					var opt=document.createElement("option");
+					opt.text="Divya Thakur";
+					x.add(opt);
+					var opt=document.createElement("option");
+					opt.text="Suresh Modi";
+					x.add(opt);
+				}
+					if(n=="m" && k=="d" )
+				{
+					var x=document.getElementById("g");
+					removeOptions(x);
+					var opt=document.createElement("option");
+					opt.text="Ashish Singh";
+					x.add(opt);
+					var opt=document.createElement("option");
+					opt.text="Shanaya Kulkarni";
+					x.add(opt);
+					var opt=document.createElement("option");
+					opt.text="Rajdeep Soni";
+					x.add(opt);
+				}
+				if(n=="Default")
+				{
+					var x=document.getElementById("g");
+					removeOptions(x);
+				}
+				return true;
+			}
+			function removeOptions(selectbox)
+			{
+			    var i;
+			    for(i = selectbox.options.length - 1 ; i > 0 ; i--)
+			    {
+			        selectbox.remove(i);
+			    }
+			}
+				
+				
+		    </script>
+	</head>
+  <body>
+
+    <form action="log-db.php" method="POST">
+    <ul class="w3-navbar w3-black">
+	 <li><a href="logout.php">Logout</a></li>
+      <li><a href="aboutus.html">About</a></li>
+      <li><a href="Register.html">Register</a></li>
+      <li><a href="main.html">Home</a></li>
+    </ul></form>
+    <br><br><br>
+    <h1 align="center"> ENTER APPOINTMENT DETAILS </h1>
+    <center>
+    <form name="booking" onsubmit="return validate()" method="POST" action="dbap.php">
+      First name:
+      <input type="text" name="firstname" >
+      <br><br>
+      Last name:
+      <input type="text" name="lastname" >
+      <br><br>
+  
+ 
+			 Locality:
+			<select name="local" onChange="subject()" id="n" >
+			<option selected="" value="Default">Choose Locality</option>
+			<option value="b">Bandra</option>
+			<option value="m">Malad</option>
+			</select><br><br>
+			Speciality:
+			<select name="special" onChange="subject()" id="k" >
+			<option selected="" value="Default">Choose Speciality</option>
+			<option value="c">Cardiologist</option>
+			<option value="d">Dermatologist</option>
+			</select>
+			<br><br>
+			
+			Select doctor:
+			<select name="sub" id="g">
+			<option selected="" value="Default">Choose Doctor</option>
+			</select>
+			<br><br>
+		
+	
+  
+  
+  Choose date for appointment :
+  <input type="date" name="day">
+  <br> <br>
+   Choose Time :
+   <br><br>
+ 
+  <button type="text" name="time" value="10 am "> 10 am </button> &nbsp
+  
+  <button type="text" name="time" value="10 : 30 am "> 10 : 30 am </button>&nbsp
+  
+  <button type="text" name="time" value="11  am "> 11 am </button> &nbsp
+  
+  <button type="text" name="time" value="11 : 30 am "> 11 : 30 am </button>
+  <br><br>
+  
+ 
+</form>
+</center>
+</body>
+</html> 
